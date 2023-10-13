@@ -1,0 +1,32 @@
+{
+	"id": "bd25af6e-bf60-4704-b7c5-964fe1620c06",
+	"name": "Local",
+	"values": [
+		{
+			"key": "mod",
+			"value": "https://api.localhost",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "uid",
+			"value": "5b5da5f6-01b6-4691-ba8a-c28a6f4b4774",
+			"enabled": true
+		},
+		{
+			"key": "yd",
+			"value": "https://dev.localhost",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "smartbank",
+			"value": "https://localhost/api/v1",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-10-13T10:52:39.109Z",
+	"_postman_exported_using": "Postman/10.19.0"
+}

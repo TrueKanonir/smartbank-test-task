@@ -1,0 +1,1375 @@
+{
+	"info": {
+		"_postman_id": "e83b9f45-51b7-42bb-bfea-8ab0644ed564",
+		"name": "SmartBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8186985"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "rustam.sadikov17@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{smartbank}}/auth/login",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rustam.sadikov17@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/auth/login",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 10:50:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "201 Created"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"1|1IeahsxaLLeQF69J8OZ43c3mwNULFDOuyZOY8YBX877025c2\"\n}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rustam.sadikov17@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1231",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/auth/login",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 10:51:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "401 Unauthorized"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Merchants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{smartbank}}/merchants?name=merchant&status=0",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "merchant"
+						},
+						{
+							"key": "status",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smartbank}}/merchants",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 13:47:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "289"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Example merchant\",\n            \"registered_at\": \"2023-10-12T13:41:42.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"https://localhost/api/v1/merchants?page=1\",\n        \"last\": \"https://localhost/api/v1/merchants?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"https://localhost/api/v1/merchants?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"https://localhost/api/v1/merchants\",\n        \"per_page\": 15,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "View Merchant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{smartbank}}/merchants/4",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smartbank}}/merchants/4",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 14:19:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"new merchant\",\n        \"registered_at\": \"2023-10-12T13:51:03.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Merchant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Test merchant",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{smartbank}}/merchants",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test merchant",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 13:51:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "201 Created"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test merchant",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 13:51:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "422 Unprocessable Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": {\n        \"status\": \"The status field is required.\"\n    },\n    \"message\": \"Validation error\",\n    \"code\": 422\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Merchant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Test merchant updated",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{smartbank}}/merchants/1",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test merchant updated",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants/1",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 13:55:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "204 No Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test merchant",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 13:51:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "422 Unprocessable Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": {\n        \"status\": \"The status field is required.\"\n    },\n    \"message\": \"Validation error\",\n    \"code\": 422\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Merchant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{smartbank}}/merchants/1",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{smartbank}}/merchants/1",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 14:02:27 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "204 No Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get Nearest Shops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{smartbank}}/merchants/1/shops?longitude=69.267933&latitude=41.296404",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"1",
+						"shops"
+					],
+					"query": [
+						{
+							"key": "longitude",
+							"value": "69.267933"
+						},
+						{
+							"key": "latitude",
+							"value": "41.296404"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{smartbank}}/merchants/1/shops?longitude=69.267933&latitude=41.296404",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"1",
+								"shops"
+							],
+							"query": [
+								{
+									"key": "longitude",
+									"value": "69.267933"
+								},
+								{
+									"key": "latitude",
+									"value": "41.296404"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 10:40:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "227"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"address\": \"проспект Амира Темура, 98\",\n            \"schedule\": \"9:00 - 18:00\",\n            \"longitude\": 69.28554,\n            \"latitude\": 41.337392\n        },\n        {\n            \"id\": 3,\n            \"address\": \"14-й квартал, 14\",\n            \"schedule\": \"9:00 - 18:00\",\n            \"longitude\": 69.19366,\n            \"latitude\": 41.295692\n        },\n        {\n            \"id\": 1,\n            \"address\": \"улица Нукус, 16\",\n            \"schedule\": \"9:00 - 18:00\",\n            \"longitude\": 69.285306,\n            \"latitude\": 41.296688\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Shop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "address",
+							"value": "test address",
+							"type": "text"
+						},
+						{
+							"key": "schedule",
+							"value": "15:00 - 23:00",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "69.253102",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "41.317423",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{smartbank}}/merchants/1/shops",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"1",
+						"shops"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "test address",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "15:00 - 23:00",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "69.253102",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "41.317423",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants/1/shops",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"1",
+								"shops"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 14:59:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "201 Created"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants/1/shops",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"1",
+								"shops"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 14:57:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "422 Unprocessable Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": {\n        \"address\": \"The address field is required.\",\n        \"schedule\": \"The schedule field is required.\",\n        \"longitude\": \"The longitude field is required.\",\n        \"latitude\": \"The latitude field is required.\"\n    },\n    \"message\": \"Validation error\",\n    \"code\": 422\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Shop",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "address",
+							"value": "test address updated",
+							"type": "text"
+						},
+						{
+							"key": "schedule",
+							"value": "15:00 - 23:00",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "69.253102",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "41.317423",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{smartbank}}/merchants/shops/4",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"shops",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "test address updated",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "15:00 - 23:00",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "69.253102",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "41.317423",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants/shops/4",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"shops",
+								"4"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 15:02:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "204 No Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "test address updated",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "15:00 - 23:00",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "longitude",
+									"value": "69.253102",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "41.317423",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{smartbank}}/merchants/shops/4",
+							"host": [
+								"{{smartbank}}"
+							],
+							"path": [
+								"merchants",
+								"shops",
+								"4"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Oct 2023 15:03:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Status",
+							"value": "422 Unprocessable Content"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": {\n        \"schedule\": \"The schedule field is required.\"\n    },\n    \"message\": \"Validation error\",\n    \"code\": 422\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Shop",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{smartbank}}/merchants/shops/4",
+					"host": [
+						"{{smartbank}}"
+					],
+					"path": [
+						"merchants",
+						"shops",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
